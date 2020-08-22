@@ -1,0 +1,27 @@
+{
+  "name": "ordbok-mongodb",
+  "version": "0.9.0",
+  "description": "Orðbók Old Norse dictionary - MongoDB implementation",
+  "main": "index.js",
+  "repository": "https://github.com/stscoundrel/ordbok-mongodb.git",
+  "author": "stscoundrel <sampo@pixels.fi>",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "mongodb": "^3.6.0",
+    "old-norse-ordbok": "^0.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "ratatoskr-log": "^0.9.1"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  }
+}
