@@ -1,12 +1,14 @@
-const { setupDB } = require('./database/setup.js')
+const { setupDB, populateDB } = require('./database/setup.js')
 const dictionary = require('./services/dictionary.js')
 
-const toMongoDB = async (url, dbName, collectionName) => {
+const toMongoDB = async (config) => {
   try {
-    const client = await setupDB(url, dbName, collectionName)
+    const client = await setupDB(config)
     const words = await dictionary.getAll()
 
-    await client.db(dbName).collection(collectionName).insertMany(words)
+    await populateDB(client, config, words)
+
+    client.close()
 
     return { status: true }
   } catch (err) {
