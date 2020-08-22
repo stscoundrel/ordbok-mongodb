@@ -9,6 +9,22 @@ Uses [Orðbók](https://github.com/stscoundrel/old-norse-ordbok) for dictionary 
 
 `yarn add ordbok-mongodb`
 
+### Usage
+
+```javascript
+const { toMongoDB } = require('ordbok-mongodb')
+
+// Your MongoDB config.
+const config = {
+  url: '', // Your connection string.
+  dbName: 'yourDBName', // Created if new.
+  collectionName: 'yourCollectionName', // Created if new.
+}
+
+// Run only once to create & populate the database.
+const res = await toMongoDB(config)
+console.log(res)
+```
 
 ### Sources
 
