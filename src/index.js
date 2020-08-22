@@ -1,4 +1,5 @@
 const { setupDB, populateDB } = require('./database/setup.js')
+const { getCollection } = require('./database/collection.js')
 const dictionary = require('./services/dictionary.js')
 
 const toMongoDB = async (config) => {
@@ -18,4 +19,5 @@ const toMongoDB = async (config) => {
 
 module.exports = {
   toMongoDB,
+  getCollection
 }
