@@ -11,6 +11,8 @@ Uses [Orðbók](https://github.com/stscoundrel/old-norse-ordbok) for dictionary 
 
 ### Usage
 
+Set up the database:
+
 ```javascript
 const { toMongoDB } = require('ordbok-mongodb')
 
@@ -24,6 +26,26 @@ const config = {
 // Run only once to create & populate the database.
 const res = await toMongoDB(config)
 console.log(res)
+```
+
+Query the database:
+
+```javascript
+const { getCollection } = require('ordbok-mongodb')
+
+// Your MongoDB config.
+const config = {...}
+
+/**
+ * Get collection & client instance.
+ * You can also do it yourself without Orðbók.
+ */
+const { collection, client } = await getCollection(config)
+
+// Any valid MongoDB query.
+const wordsStartingWithS = await collection.find({ startsWith: 's' }).toArray()
+
+console.log(wordsStartingWithS)
 ```
 
 ### Sources
