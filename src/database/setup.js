@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb')
  * Setup DB & Collection.
  */
 const setupDB = async ({ url, dbName, collectionName }) => {
-  const client = getClient(url)
+  const client = await getClient(url)
   const collections = await client.db(dbName).listCollections().toArray()
 
   const hasCollection = collections.filter((collection) => collection.name === collectionName)
