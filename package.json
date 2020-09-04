@@ -1,6 +1,6 @@
 {
   "name": "ordbok-mongodb",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Orðbók Old Norse dictionary - MongoDB implementation",
   "main": "index.js",
   "repository": "https://github.com/stscoundrel/ordbok-mongodb.git",
