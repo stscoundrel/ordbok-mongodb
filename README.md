@@ -48,6 +48,18 @@ const wordsStartingWithS = await collection.find({ startsWith: 's' }).toArray()
 console.log(wordsStartingWithS)
 ```
 
+Schema for word entries:
+
+```javascript
+{
+    word: String,
+    definition: String,
+    type: String,
+    gender: String,
+    branch: String,
+}
+```
+
 ### Sources
 
 Scraped from word list compiled by [Vikings of Bjornstad](https://www.vikingsofbjornstad.com/Old_Norse_Dictionary_E2N.shtm). The sources for the compiled list come from:
